@@ -4,8 +4,13 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/fixsimu",
-  assetPrefix: "/fixsimu",
+  // Only use basePath and assetPrefix in production
+  ...(process.env.NODE_ENV === "production"
+    ? {
+        basePath: "/fixsimu",
+        assetPrefix: "/fixsimu",
+      }
+    : {}),
 };
 
 module.exports = nextConfig;
