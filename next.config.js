@@ -11,6 +11,8 @@ const nextConfig = {
         assetPrefix: "/fixsimu",
       }
     : {}),
+  // This is needed for GitHub Pages
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
