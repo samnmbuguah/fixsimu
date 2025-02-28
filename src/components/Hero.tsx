@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
+const basePath = process.env.NODE_ENV === 'production' ? '/fixsimu' : '';
+
 export default function Hero() {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -21,7 +23,7 @@ export default function Hero() {
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
                 >
-                    <source src="/hero-video-optimized.mp4" type="video/mp4" />
+                    <source src={`${basePath}/hero-video-optimized.mp4`} type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-black/50"></div>
             </div>

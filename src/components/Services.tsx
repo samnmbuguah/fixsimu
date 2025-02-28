@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
+const basePath = process.env.NODE_ENV === 'production' ? '/fixsimu' : '';
+
 export default function Services() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
@@ -11,37 +13,37 @@ export default function Services() {
             title: 'Phone Repairs',
             description: 'Screen replacement, battery replacement, charging port repair, and more for all major brands.',
             icon: '📱',
-            image: '/images/phone-repair.jpg'
+            image: `${basePath}/images/phone-repair.jpg`
         },
         {
             title: 'Laptop Repairs',
             description: 'Hardware upgrades, screen replacement, keyboard replacement, and system optimization.',
             icon: '💻',
-            image: '/images/laptop-repair.jpg'
+            image: `${basePath}/images/laptop-repair.jpg`
         },
         {
             title: 'Spare Parts',
             description: 'Quality replacement parts for phones and laptops, with warranty coverage.',
             icon: '🔧',
-            image: '/images/spare-parts.jpg'
+            image: `${basePath}/images/spare-parts.jpg`
         },
         {
             title: 'Data Recovery',
             description: 'Professional data recovery services for damaged or malfunctioning devices.',
             icon: '💾',
-            image: '/images/data-recovery.jpg'
+            image: `${basePath}/images/data-recovery.jpg`
         },
         {
             title: 'Diagnostics',
             description: 'Comprehensive device diagnostics to identify and resolve issues effectively.',
             icon: '🔍',
-            image: '/images/diagnostics.jpg'
+            image: `${basePath}/images/diagnostics.jpg`
         },
         {
             title: 'Express Service',
             description: 'Quick turnaround time for urgent repairs with same-day service available.',
             icon: '⚡',
-            image: '/images/express-service.jpg'
+            image: `${basePath}/images/express-service.jpg`
         }
     ];
 
